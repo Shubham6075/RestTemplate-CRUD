@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "185b5e3d-c139-4ab2-ac25-3c17f475dd93",
+		"name": "RestTemplate full CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34621469"
+	},
+	"item": [
+		{
+			"name": "WITHOUT RT",
+			"item": [
+				{
+					"name": "CREATE USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alice Smith\",\r\n    \"email\": \"alice.smith@example.com\",\r\n    \"address\": \"456 Oak St, Denver, CO\",\r\n    \"phone\": \"987-654-3210\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_8181}}users",
+							"host": [
+								"{{base_url_8181}}users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL USERS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_8181}}users",
+							"host": [
+								"{{base_url_8181}}users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_8181}}users/id/1",
+							"host": [
+								"{{base_url_8181}}users"
+							],
+							"path": [
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER BY EMAIL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_8181}}users/email/alice.smith@example.com",
+							"host": [
+								"{{base_url_8181}}users"
+							],
+							"path": [
+								"email",
+								"alice.smith@example.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT UPDATE FOR USER",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alice Smith jai mata di\",\r\n    \"email\": \"alice.smith@example.com\",\r\n    \"address\": \"456 Oak St, Denver, CO\",\r\n    \"phone\": \"987-654-3210\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_8181}}users/1",
+							"host": [
+								"{{base_url_8181}}users"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE USER BY ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_8181}}users/1",
+							"host": [
+								"{{base_url_8181}}users"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH UPDATE FOR USER",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alice Smith jai mata di\",\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_8181}}users/2",
+							"host": [
+								"{{base_url_8181}}users"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WITH RT",
+			"item": [
+				{
+					"name": "CREATE USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bob Johnson\",\r\n    \"email\": \"bob.johnson@example.com\",\r\n    \"address\": \"789 Elm St, Austin, TX\",\r\n    \"phone\": \"555-123-4567\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_8282}}management",
+							"host": [
+								"{{base_url_8282}}management"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL USERS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_8282}}management",
+							"host": [
+								"{{base_url_8282}}management"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_8282}}management/id/1",
+							"host": [
+								"{{base_url_8282}}management"
+							],
+							"path": [
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER BY EMAIL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_8282}}management/email/alice.smith@example.com",
+							"host": [
+								"{{base_url_8282}}management"
+							],
+							"path": [
+								"email",
+								"alice.smith@example.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT UPDATE FOR USER",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alice Smith jai mata di\",\r\n    \"email\": \"alice.smith@example.com\",\r\n    \"address\": \"456 Oak St, Denver, CO\",\r\n    \"phone\": \"987-654-3210\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_8282}}management/2",
+							"host": [
+								"{{base_url_8282}}management"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE USER BY ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_8282}}management/1",
+							"host": [
+								"{{base_url_8282}}management"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH UPDATE FOR USER",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alice Smith jai mata di jai shree ram\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_8282}}management/2",
+							"host": [
+								"{{base_url_8282}}management"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url_8181",
+			"value": "http://localhost:8181/",
+			"type": "string"
+		},
+		{
+			"key": "base_url_8282",
+			"value": "http://localhost:8282/",
+			"type": "string"
+		}
+	]
+}
